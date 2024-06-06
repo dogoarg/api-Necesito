@@ -19,13 +19,13 @@ async function updatePins(db) {
 }
 
 module.exports = (db) => {
-  //cron.schedule('0 */30 * * *', () => { // Cada 30 horas
-    //console.log('Ejecutando tarea programada: Actualizar pins');
-    //updatePins(db);
-  //});
-
-  cron.schedule('* * * * *', () => { // Cada minuto
+  cron.schedule('0 */30 * * *', () => { // Cada 30 horas
     console.log('Ejecutando tarea programada: Actualizar pins');
     updatePins(db);
   });
+
+  // cron.schedule('* * * * *', () => { // Cada minuto
+  //   console.log('Ejecutando tarea programada: Actualizar pins');
+  //   updatePins(db);
+  // });
 };
